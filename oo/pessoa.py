@@ -17,9 +17,14 @@ class Pessoa:
     def nome_e_atributos_de_calsse(cls):
         return f'{cls} - olhos {cls.olhos}'
 
+
+class Homem(Pessoa):
+    pass
+
+
 if __name__ == '__main__':
-    renzo = Pessoa(nome='Renzo')
-    pedro = Pessoa(renzo, nome='Pedro')
+    renzo = Homem(nome='Renzo')
+    pedro = Homem(renzo, nome='Pedro')
     print(Pessoa.cumprimentar(pedro))
     print(id(pedro))
     print(pedro.cumprimentar())
@@ -40,3 +45,8 @@ if __name__ == '__main__':
     print(id(Pessoa.olhos), id(pedro.olhos), id(renzo.olhos))
     print(Pessoa.metodo_estatico(), pedro.metodo_estatico())
     print(Pessoa.nome_e_atributos_de_calsse(), pedro.nome_e_atributos_de_calsse())
+    pessoa = Pessoa('Anonimo')
+    print(isinstance(pessoa, Pessoa))
+    print(isinstance(pessoa, Homem))
+    print(isinstance(renzo, Pessoa))
+    print(isinstance(renzo, Homem))
