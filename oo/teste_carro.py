@@ -1,13 +1,15 @@
-from unittest import TestCase
+import unittest
 
-from oo.carro import Motor
+from carro import Motor
 
-class CarroTestCase(TestCase):
+class teste_carro(unittest.TestCase):
     def teste_velocidade_inicial(self):
         motor = Motor()        
-        self.assertEqual(1, motor.velocidade)
+        self.assertEqual(0, motor.velocidade)
 
     def teste_acelerar(self):
         motor = Motor()
         motor.acelerar()
         self.assertEqual(1, motor.velocidade)
+
+unittest.main()
